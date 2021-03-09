@@ -46,8 +46,8 @@ The ACPP data exists in two versions. The SUF version for scientific use and an 
 
 | Data Set  | filename             | DOI             | Server         | Language |
 | --------- |:--------------------:| :--------------:| :-------------:| :------: |
-| ACPP SUF  | 10094_da_de_v2_0.tab | 10.11587/28KQNS | data.aussda.at | English  |
-| ACPP OA   | 10095_da_de_v1_0.tab | 10.11587/P5YJ0O | data.aussda.at | English  |
+| ACPP SUF  | 10094_da_de_v2_0.tab | 10.11587/28KQNS | data.aussda.at | German   |
+| ACPP OA   | 10095_da_de_v1_0.tab | 10.11587/P5YJ0O | data.aussda.at | German   |
 
 If we want to download the scientific use version of the ACPP data we can do so by using the filename *10094_da_de_v2_0.tab* and the DOI *10.11587/28KQNS*. Hence, we can request the SUF data with the following `R` code:
 ```
