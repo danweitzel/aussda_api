@@ -2,7 +2,7 @@
 
 In my current position at the University of Vienna I frequently work with data sets from the [Austrian Corona Panel Project](https://viecer.univie.ac.at/en/projects-and-cooperations/austrian-corona-panel-project/) (ACPP) and the [Austrian National Election Study](https://autnes.at/) (AUTNES). Both projects store their data in the Dataverse of the [Austrian Social Science Data Archive](https://data.aussda.at/) (AUSSDA). 
 
-I'm a big fan of reproducible research and publicly available data sets are key for this. The mushrooming of dataverse repositories is an exciting development because it makes data sets available for everyone and brings us one step closer to fully reproducible research. However, I do not like to have data sets stored locally on my hard drive. The key concerns here are reproducability and disk space, although the latter is not really an issue with the data sets from the ACPP and AUTNES. Lucklily, there is an easy solution: We can access the ACPP and AUTNES data sets through the [Dataverse API](https://guides.dataverse.org/en/latest/api/index.html). This also also speeds up the workflow of any project involving these data sets and allows to share code without sharing data sets that require each user to have individual access rights. 
+I'm a big fan of reproducible research and publicly available data sets are key for this. The mushrooming of dataverse repositories is an exciting development because it makes data sets available for everyone and brings us one step closer to fully reproducible research. However, I do not like to have data sets stored locally on my hard drive. The key concerns here are reproducibility across different computers and users as well as sacrificing disk space to data sets that might be outdated after an update, although the latter is not really an issue with the data sets from the ACPP and AUTNES. Lucklily, there is an easy solution: We can access the ACPP and AUTNES data sets through the [Dataverse API](https://guides.dataverse.org/en/latest/api/index.html). This also also speeds up the workflow of any project involving these data sets and allows to share code without sharing data sets that require each user to have individual access rights. 
 
 ## Setting things up
 
@@ -14,7 +14,7 @@ You can install it with the following line of code:
 install.packages("dataverse", dependencies = TRUE)
 ```
 
-In order to be able to connect with the Dataverse API you will need an account with the [AUSSDA dataverse](https://data.aussda.at/). You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on yout name in the top left, and selecting API Token as can be seen in the picture below.
+In order to be able to connect with the Dataverse API you will need an account with the [AUSSDA dataverse](https://data.aussda.at/). You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on your name in the top left, and selecting API Token as can be seen in the picture below.
 
 ![Finding API Token](api1.png)
 
@@ -71,7 +71,7 @@ From the repository page of the [AUTNES Online Panel Study 2017 (SUF edition)](h
 | AUTNES Online     | 2017 | 10096_da_en_v1_0.tab | 10.11587/I7QIYJ | data.aussda.at |
 | AUTNES Multi-mode | 2017 | 10025_da_en_v1_0.dta | 10.11587/NXDDPE | data.aussda.at |
 
-R code for requestion the AUTNES Online 2017 SUF version of the data set would look like this: 
+R code for requesting the AUTNES Online 2017 SUF version of the data set would look like this: 
 
 ```
 # Autnes
