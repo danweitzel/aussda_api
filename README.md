@@ -22,7 +22,7 @@ After clicking on API Token you will be taken to a page where you can generate a
 
 ![Generating API Token](api2.png)
 
-We can now set up the R script for the dataverse call. You should start with loading the library and specifying the `DATAVERSE_KEY`, which takes the API Token you copied from the AUSSDA website between the quotation marks. 
+We can now set up the `R` script for the dataverse call. You should start with loading the library and specifying the `DATAVERSE_KEY`, which takes the API Token you copied from the AUSSDA website between the quotation marks. 
 
 ```
 ## Loading the dataverse library
