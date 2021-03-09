@@ -16,11 +16,11 @@ install.packages("dataverse", dependencies = TRUE)
 
 In order to be able to connect with the Dataverse API you will need an account with the [AUSSDA dataverse](https://data.aussda.at/). You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on yout name in the top left, and selecting API Token as can be seenm in the picture below.
 
-IMAGE 1
+![Finding API Token](api1.png)
 
 After clicking on API Token you will be taken to a page where you can generate a 37 digit Token that is valid for one year. Under no circumstances should you share this token with anyone. Treat it like your username/password combination and make sure it is never included in code you share with others or push in a publicly available repository.
 
-IMAGE 2
+![Generating API Token](api2.png)
 
 We can now set up the R script for the dataverse call. You should start with loading the library and specifying the `DATAVERSE_KEY`, which takes the API Token you copied from the AUSSDA website between the quotation marks. 
 
