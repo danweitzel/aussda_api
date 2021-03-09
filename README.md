@@ -69,7 +69,7 @@ From the repository page of the [AUTNES Online Panel Study 2017 (SUF edition)](h
 
 | Data Set          | Year | filename             | DOI             | Server         |
 | ----------------- | :--: |:--------------------:| :--------------:| :-------------:|
-| AUTNES Online     | 2017 | 10096_da_en_v1_0.tab | 10.11587/I7QIYJ | data.aussda.at |
+| AUTNES Online     | 2017 | 10017_da_en_v2_0.tab | 10.11587/I7QIYJ | data.aussda.at |
 | AUTNES Multi-mode | 2017 | 10025_da_en_v1_0.dta | 10.11587/NXDDPE | data.aussda.at |
 
 `R` code for requesting the AUTNES Online 2017 SUF version of the data set would look like this: 
@@ -78,7 +78,7 @@ From the repository page of the [AUTNES Online Panel Study 2017 (SUF edition)](h
 # Autnes
 df_autnes_online <- 
   get_dataframe_by_name(
-    filename    = "10096_da_en_v1_0.tab",
+    filename    = "10017_da_en_v2_0.tab",
     dataset     = "10.11587/I7QIYJ",
     .f          = haven::read_dta,
     original    = TRUE,
