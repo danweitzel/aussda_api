@@ -56,6 +56,7 @@ df_acpp_suf <-
     filename    = "10094_da_de_v2_0.tab",
     dataset     = "10.11587/28KQNS",
     .f          = haven::read_dta,
+    original    = TRUE,
     server      = "data.aussda.at")
 ```
 
@@ -80,6 +81,7 @@ df_autnes_online <-
     filename    = "10096_da_en_v1_0.tab",
     dataset     = "10.11587/I7QIYJ",
     .f          = haven::read_dta,
+    original    = TRUE,
     server      = "data.aussda.at")
   ```
 
