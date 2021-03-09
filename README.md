@@ -1,10 +1,12 @@
-# Accessing ASSDA data through the Dataverse API in R
+# Accessing AUSSDA data through the Dataverse API in R
 
 In my current position at the University of Vienna I frequently work with data sets from the [Austrian Corona Panel Project](https://viecer.univie.ac.at/en/projects-and-cooperations/austrian-corona-panel-project/) (ACPP) and the [Austrian National Election Study](https://autnes.at/) (AUTNES). Both projects store their data in the Dataverse of the [Austrian Social Science Data Archive](https://data.aussda.at/) (AUSSDA). 
 
-I'm a big fan of reproducible research and publicly available data sets are key for this. The mushrooming of dataverse repositories is an exciting development because it makes data sets available for everyone and brings us one step closer to fully reproducible research. However, I do not like to have data sets stored locally on my hard drive. The key concerns here are reproducability and disk space, although the latter is not really an issue with the data sets from the ACPP and AUTNES. Lucklily, there is an easy solution: We can access the ACPP and AUITNES data sets through the Dataverse API. This also also speeds up the workflow of any project involving these data sets. 
+I'm a big fan of reproducible research and publicly available data sets are key for this. The mushrooming of dataverse repositories is an exciting development because it makes data sets available for everyone and brings us one step closer to fully reproducible research. However, I do not like to have data sets stored locally on my hard drive. The key concerns here are reproducability and disk space, although the latter is not really an issue with the data sets from the ACPP and AUTNES. Lucklily, there is an easy solution: We can access the ACPP and AUTNES data sets through the [Dataverse API](https://guides.dataverse.org/en/latest/api/index.html). This also also speeds up the workflow of any project involving these data sets and allows to share code without sharing data sets that require each user to have individual access rights. 
 
-We'll be using the `dataverse` package available on CRAN (more information [here](https://iqss.github.io/dataverse-client-r/). 
+## Setting things up
+
+We'll be using the `dataverse` package available on CRAN (more information [here](https://iqss.github.io/dataverse-client-r/)). 
 You can install it with the following line of code:
 
 ```
@@ -12,26 +14,28 @@ You can install it with the following line of code:
 install.packages("dataverse", dependencies = TRUE)
 ```
 
-In order to be able to connect with the Dataverse API you will need an account with the AUSSDA dataverse. You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on yout name in the top left, and selecting API Token as can be seenm in the picture below.
+In order to be able to connect with the Dataverse API you will need an account with the [AUSSDA dataverse](https://data.aussda.at/). You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on yout name in the top left, and selecting API Token as can be seenm in the picture below.
 
 IMAGE 1
 
-After clicking on API Token you will be taken to a page where you can generate a 37 digit Token that is valid for one year. Under no circumstances should you share this token with anyone. Treat it like your username/password combination! 
+After clicking on API Token you will be taken to a page where you can generate a 37 digit Token that is valid for one year. Under no circumstances should you share this token with anyone. Treat it like your username/password combination and make sure it is never included in code you share with others or push in a publicly available repository.
 
 IMAGE 2
 
-We can now set up the R script for the dataverse call. You should start with loading the library and specifying the `DATAVERSE_KEY` as well as the `DATAVERSE_SERVER`.
+We can now set up the R script for the dataverse call. You should start with loading the library and specifying the `DATAVERSE_KEY`, which takes the API Token you copied from the AUSSDA website between the quotation marks. 
 
 ```
+## Loading the dataverse library
 library("dataverse")
 
+## Specifying the API Token we received from AUSSDA
 Sys.setenv("DATAVERSE_KEY" = "YOUR_API_KEY")
 ```
 
 Calling data sets from the AUSSDA dataverse is done using the `get_dataframe_by_name()` function, which takes the following arguments:
 - `filename` = The file name of the data set we want to download
 - `dataset`  = The DOI of the repository that holds the data set we want to download
-- `.f` = The function we want to use to read the data set. Since we have .tab data in both cases we use read_dta from the haven package
+- `.f` = The function we want to use to read the data set. Since we have .tab data in both cases we use `read_dta()` from the `haven` package
 - `server` = The server address. For the AUSSDA data this always is: *data.aussda.at*
 
 
@@ -56,9 +60,9 @@ df_acpp_suf <-
 ```
 
 
-## Austrian National Election Study
+## Austrian National Election Study 2017
 
-The AUTNES panel surveys for the most recent Austrian election in 2017 were collected in two different ways. There exists a online panel study with six wave s(4 pre- and 2 post-election) as well as a multi-mode study with phone and online modes (2 pre- and 1 post-election waves). The modes, sample sizes, and survey times are very well explained [here](https://autnes.at/en/autnes-data/general-election-2017/).
+The AUTNES panel surveys for the most recent Austrian election in 2017 were collected in two different ways. There exists an online panel study with six waves (4 pre- and 2 post-election) as well as a multi-mode study with phone and online modes (2 pre- and 1 post-election waves each). The modes, sample sizes, and survey times are very well explained [here](https://autnes.at/en/autnes-data/general-election-2017/).
 
 From the repository page of the [AUTNES Online Panel Study 2017 (SUF edition)](https://data.aussda.at/dataset.xhtml?persistentId=doi:10.11587/I7QIYJ) and the [AUTNES Multi-Mode Panel Study 2017 (SUF edition)](https://data.aussda.at/dataset.xhtml?persistentId=doi:10.11587/NXDDPE) we can collect the filenames and DOI of the data sets:
 
