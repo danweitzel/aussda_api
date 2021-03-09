@@ -36,6 +36,7 @@ Calling data sets from the AUSSDA dataverse is done using the `get_dataframe_by_
 - `filename` = The file name of the data set we want to download
 - `dataset`  = The DOI of the repository that holds the data set we want to download
 - `.f` = The function we want to use to read the data set. Since we have .tab data in both cases we use `read_dta()` from the `haven` package
+- `original` = Which specifies if we want the original version of the file (TRUE) or the archival version that the dataverse generated (FALSE).  
 - `server` = The server address. For the AUSSDA data this always is: *data.aussda.at*
 
 
