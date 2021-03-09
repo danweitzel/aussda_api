@@ -14,7 +14,7 @@ You can install it with the following line of code:
 install.packages("dataverse", dependencies = TRUE)
 ```
 
-In order to be able to connect with the Dataverse API you will need an account with the [AUSSDA dataverse](https://data.aussda.at/). You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on yout name in the top left, and selecting API Token as can be seenm in the picture below.
+In order to be able to connect with the Dataverse API you will need an account with the [AUSSDA dataverse](https://data.aussda.at/). You can sign up through the SSO of your institution or using your email. After you have generated your account you'll need the `DATAVERSE_KEY`, which is the API Token that connects your API request with your registered dataverse account. You can ge the API Token by logging into your account, clicking on yout name in the top left, and selecting API Token as can be seen in the picture below.
 
 ![Finding API Token](api1.png)
 
