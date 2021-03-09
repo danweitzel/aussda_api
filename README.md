@@ -18,7 +18,7 @@ In order to be able to connect with the Dataverse API you will need an account w
 
 ![Finding API Token](api1.png)
 
-After clicking on API Token you will be taken to a page where you can generate a 37 digit Token that is valid for one year. Under no circumstances should you share this token with anyone. Treat it like your username/password combination and make sure it is never included in code you share with others or push in a publicly available repository.
+After clicking on API Token you will be taken to a page where you can generate a 37 digit Token that is valid for one year. Under no circumstances should you share this token with anyone. Treat it like your username/password combination and make sure it is never included in code you share with others or push into a publicly available repository.
 
 ![Generating API Token](api2.png)
 
