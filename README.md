@@ -43,10 +43,10 @@ Calling data sets from the AUSSDA dataverse is done using the `get_dataframe_by_
 
 The ACPP data exists in two versions. The SUF version for scientific use and an OA version for open access. If we want to download the ACPP data we can do so by gathering the relevant information from the repository pages of the [scientific use](https://data.aussda.at/dataset.xhtml?persistentId=doi:10.11587/28KQNS) or [open access](https://data.aussda.at/dataset.xhtml?persistentId=doi:10.11587/P5YJ0O) versions of the data. The filename and DOI for those are:
 
-| Data Set  | filename             | DOI             | Server         |
-| --------- |:--------------------:| :--------------:| :-------------:|
-| ACPP SUF  | 10094_da_de_v2_0.tab | 10.11587/28KQNS | data.aussda.at |
-| ACPP OA   | 10095_da_de_v1_0.tab | 10.11587/P5YJ0O | data.aussda.at |
+| Data Set  | filename             | DOI             | Server         | Language |
+| --------- |:--------------------:| :--------------:| :-------------:| :------: |
+| ACPP SUF  | 10094_da_de_v2_0.tab | 10.11587/28KQNS | data.aussda.at | English  |
+| ACPP OA   | 10095_da_de_v1_0.tab | 10.11587/P5YJ0O | data.aussda.at | English  |
 
 If we want to download the scientific use version of the ACPP data we can do so by using the filename *10094_da_de_v2_0.tab* and the DOI *10.11587/28KQNS*. Hence, we can request the SUF data with the following `R` code:
 ```
@@ -67,10 +67,10 @@ The AUTNES panel surveys for the most recent Austrian election in 2017 were coll
 
 From the repository page of the [AUTNES Online Panel Study 2017 (SUF edition)](https://data.aussda.at/dataset.xhtml?persistentId=doi:10.11587/I7QIYJ) and the [AUTNES Multi-Mode Panel Study 2017 (SUF edition)](https://data.aussda.at/dataset.xhtml?persistentId=doi:10.11587/NXDDPE) we can collect the filenames and DOI of the data sets:
 
-| Data Set          | Year | filename             | DOI             | Server         |
-| ----------------- | :--: |:--------------------:| :--------------:| :-------------:|
-| AUTNES Online     | 2017 | 10017_da_en_v2_0.tab | 10.11587/I7QIYJ | data.aussda.at |
-| AUTNES Multi-mode | 2017 | 10025_da_en_v1_0.dta | 10.11587/NXDDPE | data.aussda.at |
+| Data Set          | Year | filename             | DOI             | Server         | Language |
+| ----------------- | :--: |:--------------------:| :--------------:| :-------------:| :------: |
+| AUTNES Online     | 2017 | 10017_da_en_v2_0.tab | 10.11587/I7QIYJ | data.aussda.at | English  |
+| AUTNES Multi-mode | 2017 | 10025_da_en_v1_0.dta | 10.11587/NXDDPE | data.aussda.at | English  |
 
 `R` code for requesting the AUTNES Online 2017 SUF version of the data set would look like this: 
 
